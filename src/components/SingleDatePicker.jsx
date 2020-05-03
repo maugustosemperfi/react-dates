@@ -193,25 +193,6 @@ class SingleDatePicker extends React.PureComponent {
   }
 
   onOutsideClick(event) {
-    const {
-      focused,
-      onFocusChange,
-      onClose,
-      date,
-      appendToBody,
-    } = this.props;
-
-    if (!focused) return;
-    if (appendToBody && this.dayPickerContainer.contains(event.target)) return;
-
-    this.setState({
-      isInputFocused: false,
-      isDayPickerFocused: false,
-      showKeyboardShortcuts: false,
-    });
-
-    onFocusChange({ focused: false });
-    onClose({ date });
   }
 
   onInputFocus({ focused }) {
